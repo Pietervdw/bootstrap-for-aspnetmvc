@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Search";
+    Layout = "_Layout";
+}
+@model IEnumerable<Chapter3.Models.EmployeeViewModel>
+<div class="container" style="margin-top: 30px;">
+
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Search</a></li>
+        <li class="breadcrumb-item active">Employees</li>
+    </ol>
+
+
+
+    <h1>
+        Employees Results <small>Results for your search term: "@ViewBag.SearchQuery"</small>
+    </h1>
+    @foreach (var item in Model)
+    {
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="@Url.Content("~/img/employees/" + @item.Id + ".png")" alt="@item.Name" width="64" height="64">
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">@item.Name</h4>
+                @item.About
+                @foreach (var emp in @item.ReportingEmployees)
+                {
+                    <div class="media">
+                        <a class="media-left" href="#">
+                            <img class="media-object" src="@Url.Content("~/img/employees/" + @emp.Id + ".png")" alt="@emp.Name" width="64" height="64">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">@emp.Name</h4>
+                            @emp.JobTitle
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
+

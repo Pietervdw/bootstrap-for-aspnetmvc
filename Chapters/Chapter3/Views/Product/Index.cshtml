@@ -1,0 +1,60 @@
+﻿@model Chapter3.Models.ProductPagingViewModel
+
+<div class="container" style="padding-top: 10px;">
+    <h1>
+        Products
+    </h1>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Product Name
+                </th>
+                <th>
+                    Unit Price
+                </th>
+                <th>
+                    Units in Stock
+                </th>
+                <th>
+                    Discontinued
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Products)
+            {
+                <tr class="@item.Status">
+                    <td>@item.Name</td>
+                    <td>@item.UnitPrice</td>
+                    <td>@item.UnitsInStock</td>
+                    <td>@item.Discontinued</td>
+                </tr>}
+        </tbody>
+    </table>
+    <div>
+        <cs-pager cs-paging-pagesize="@Model.Paging.ItemsPerPage"
+                  cs-paging-pagenumber="@Model.Paging.CurrentPage"
+                  cs-paging-totalitems="@Model.Paging.TotalItems"
+                  cs-pagenumber-param="page"
+                  cs-show-first-last="true"
+                  cs-suppress-empty-nextprev="true"
+                  cs-suppress-inactive-firstlast="true"
+                  cs-first-page-text="First"
+                  cs-last-page-text="Last"
+                  cs-pager-li-current-class="active"
+                  cs-pager-li-non-active-class="disabled"></cs-pager>
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul.pagination > li').addClass('page-item');
+            $('li.page-item > a').addClass('page-link');
+            $('li.active').empty();
+            $('li.active').append('<a class="page-link" href="#">' + @Model.Paging.CurrentPage + ' <span class="sr-only">(current)</span></a>');
+        });
+    </script>
+}

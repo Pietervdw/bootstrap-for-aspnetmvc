@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Tabs";
+    Layout = "_Layout";
+}
+@model Chapter4.Models.EmployeeModel
+<div class="container">
+    <h1>Tabs</h1>
+    <form>
+        <div class="row">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#info" role="tab">Employee Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#background" role="tab">Background</a>
+                </li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="info" role="tabpanel">
+                    <fieldset class="form-group">
+                        <label asp-for="Name" class="col-md-2 control-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label asp-for="JobTitle" class="col-md-2 control-label"></label>
+                        <input asp-for="JobTitle" class="form-control" />
+                    </fieldset>
+                </div>
+                <div class="tab-pane" id="background" role="tabpanel">
+                    <textarea asp-for="About" rows="3" class="form-control"></textarea>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.nav-tabs a[href="#background"]').tab('show');
+        });
+    </script>
+}

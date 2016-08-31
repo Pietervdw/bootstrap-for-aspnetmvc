@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Chapter7.Models.Customer>
+@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <h1>Customer List</h1>
+    <div class="row">
+        <table id="customer-table" class="table table-striped table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Company Name</th>
+                    <th>Contact Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model)
+            {
+                    <tr>
+                        <td>@customer.CustomerCode</td>
+                        <td>@customer.CompanyName</td>
+                        <td>@customer.ContactName</td>
+                        <td>@customer.Address</td>
+                        <td>@customer.City</td>
+                        <td>@customer.CreatedDate.ToString("d")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section scripts{
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/dataTables.bootstrap4.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.datatables.net/colreorder/1.3.1/js/dataTables.colReorder.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/1.1.2/js/buttons.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/1.1.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/1.1.2/js/buttons.print.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.datatables.net/buttons/1.1.2/js/buttons.colVis.min.js"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.4/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.11/sorting/datetime-moment.js"></script>
+
+    <script type="text/javascript" src="//cdn.datatables.net/plug-ins/1.10.11/dataRender/ellipsis.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#customer-table').DataTable({
+            //    dom: 'Bfrtip',
+            //    buttons: [
+            //       'copy', 'print'
+            //    ]
+            //});
+            $.fn.dataTable.moment('DD/MM/YYYY');
+            $('#customer-table').DataTable({
+                colReorder: true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'colvis','copy', 'print'
+                ],
+                columnDefs: [{
+                    targets: 1,
+                    render: $.fn.dataTable.render.ellipsis(15, true)
+                }]
+            });
+        });
+    </script>
+}

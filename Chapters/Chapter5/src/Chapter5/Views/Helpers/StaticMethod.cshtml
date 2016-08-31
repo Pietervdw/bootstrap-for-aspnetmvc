@@ -1,0 +1,22 @@
+﻿@using Chapter5.Helpers
+
+
+
+@{
+    ViewData["Title"] = "Static Method Helpers";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Static Method Helpers</h1>
+    <div class="row">
+        @ButtonHelper.Button("Large Danger Button", Enums.ButtonStyle.Danger, Enums.ButtonSize.Large)
+    </div>
+    <div class="row" style="padding-top: 20px;">
+        @ButtonHelper.Button("Normal Info Button", Enums.ButtonStyle.Info, Enums.ButtonSize.Normal)
+    </div>
+    <div class="row" style="padding-top: 20px;">
+        @ButtonHelper.Button("Small Secondary Button", Enums.ButtonStyle.Secondary, Enums.ButtonSize.Small)
+    </div>
+</div>
+

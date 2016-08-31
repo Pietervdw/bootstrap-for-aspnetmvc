@@ -1,0 +1,31 @@
+﻿@model Chapter3.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Horizontal/Grid Forms";
+    Layout = "_Layout";
+}
+
+
+<div class="container">
+
+    <h1>Log in - Horizontal/Grid Form</h1>
+
+    <form asp-controller="Account" asp-action="Login" method="post">
+
+        <fieldset class="form-group row">
+            <label asp-for="Username" class="col-sm-3 form-control-label">Username</label>
+            <div class="col-sm-9">
+                <input asp-for="Username" class="form-control" placeholder="Enter your username" />    
+            </div>
+        </fieldset>
+
+        <div class="form-group row">
+            <label asp-for="Password" class="col-sm-3 form-control-label">Password</label>
+            <div class="col-sm-9">
+                <input asp-for="Password" class="form-control" placeholder="Enter your password" />
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>

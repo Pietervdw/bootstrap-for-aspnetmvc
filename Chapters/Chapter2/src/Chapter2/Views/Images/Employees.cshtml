@@ -1,0 +1,25 @@
+
+
+@{
+    ViewData["Title"] = "Images - Employees";
+    Layout = "_Layout";
+}
+
+@model IEnumerable<Chapter2.Models.EmployeeViewModel>
+<div class="container">
+    <h2>Employees</h2>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <img src="@Url.Content("~/img/employees/" + item.Id + ".png")" alt="@item.Name" class="img-circle img-responsive">
+                <h3>
+                    @item.Name<small> @item.JobTitle</small>
+                </h3>
+                <p>@item.About</p>
+            </div>
+        }
+    </div>
+
+</div>

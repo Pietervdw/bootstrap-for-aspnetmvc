@@ -1,0 +1,11 @@
+{
+	"name": "asp.net",
+	"private": true,
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.3",
+    "font-awesome": "4.6.3",
+    "datatables.net": "1.10.12",
+    "datatables.net-dt": "1.10.12",
+    "datatables.net-bs": "1.10.12"
+  }
+}

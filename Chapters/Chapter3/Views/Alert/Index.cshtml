@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Alerts";
+    Layout = "_Layout";
+}
+
+<div class="container" style="padding-top: 30px;">
+    <h1>Alerts</h1>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <div class="alert alert-success" role="alert">
+            <strong>Success!</strong> You have successfully saved the file.
+        </div>
+        <div class="alert alert-info" role="alert">
+            <strong>Info.</strong> Something has just happened.
+        </div>
+        <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> The file size is too big.
+        </div>
+        <div class="alert alert-danger" role="alert">
+            <strong>Danger!</strong> The file could not be saved
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="alert alert-danger alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Something went wrong!</strong> You can close this alert when done.
+        </div>
+    </div>
+
+</div>

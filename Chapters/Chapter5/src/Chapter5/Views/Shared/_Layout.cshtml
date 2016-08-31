@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+</head>
+<body>
+    <nav class="navbar navbar-full navbar-dark bg-primary">
+
+        <div class="collapse navbar-toggleable-xs" id="nav-content">
+            <a class="navbar-brand" href="#">
+                <img src="~/img/bootstraplogo.png" alt="Logo" />
+            </a>
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Helpers" asp-action="StaticMethod">Static Method Helper</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Helpers" asp-action="ExtensionMethod">Extension Method Helper</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Helpers" asp-action="SelfClosing">Self Closing Helper</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        Tag Helpers
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="Preview">
+                        <a class="dropdown-item" asp-controller="TagHelper" asp-action="Alert">Alert</a>
+                        <a class="dropdown-item" asp-controller="TagHelper" asp-action="Button">Button</a>
+                        <a class="dropdown-item" href="#">Dropdown Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    @RenderBody()
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+</html>

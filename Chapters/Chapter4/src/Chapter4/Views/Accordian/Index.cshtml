@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Accordian/Collapse";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Accordian/Collapse</h1>
+
+    <div class="row">
+
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            How do I order from you?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    Aliquam erat volutpat. Fusce diam neque, facilisis eu arcu eu, vestibulum scelerisque ex. Aenean varius ornare libero at rutrum. Nulla dapibus metus vel velit finibus, in tincidunt eros ornare. Sed quis dictum risus. Donec ut orci pulvinar, tincidunt ipsum a, dapibus lectus. Proin dictum feugiat metus nec porttitor. Proin sed diam eget lectus maximus imperdiet ac consequat mauris.
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Do you ship internationally?
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    Fusce tortor massa, ullamcorper sit amet ligula non, suscipit eleifend nisi. Aenean dolor purus, rhoncus a ante nec, tempor dapibus ex. Morbi nec pulvinar urna. Maecenas mollis consectetur leo, at ullamcorper elit fermentum vel. Donec arcu neque, varius quis nibh nec, aliquet elementum lacus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum et rhoncus nisl. Mauris egestas posuere elit nec varius.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

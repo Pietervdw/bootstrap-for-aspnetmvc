@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Progress";
+    Layout = "_Layout";
+}
+
+<div class="container" style="padding-top: 30px;">
+    <h1>Progress</h1>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <h4>Basic progress</h4>
+        <progress class="progress" value="50" max="100"></progress>
+    </div>
+
+    <div class="row">
+        <h4>Success</h4>
+        <progress class="progress progress-success" value="100" max="100"></progress>
+        <h4>Info</h4>
+        <progress class="progress progress-info" value="25" max="100"></progress>
+        <h4>Warning</h4>
+        <progress class="progress progress-warning" value="50" max="100"></progress>
+        <h4>Danger</h4>
+        <progress class="progress progress-danger" value="75" max="100"></progress>
+    </div>
+
+    <div class="row">
+        <h4>Striped Danger</h4>
+        <progress class="progress progress-striped progress-danger" value="75" max="100"></progress>
+    </div>
+
+    <div class="row">
+        <h4>Animated Danger</h4>
+        <progress class="progress progress-striped progress-danger progress-animated" value="75" max="100"></progress>
+    </div>
+
+</div>

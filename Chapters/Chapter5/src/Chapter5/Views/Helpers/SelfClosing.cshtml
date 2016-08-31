@@ -1,0 +1,21 @@
+﻿@using Chapter5.Helpers
+@using Chapter5.Helpers.Alerts
+
+@{
+    ViewData["Title"] = "Self Closing Method Helpers";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Self Closing  Helpers</h1>
+
+    <div class="row">
+        @using (Html.Alert("Title", Enums.AlertStyle.Success))
+        {
+            <p>Hello World</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        }
+    </div>
+
+</div>
+

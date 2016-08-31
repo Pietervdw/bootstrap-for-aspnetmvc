@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Chapter3.Models.ProductModel>
+<div class="container" style="padding-top: 30px;">
+    <h1>
+        Product search results
+        <small>
+            @if (ViewBag.SearchQuery != null)
+            {<text>Results for your search term: </text> @ViewBag.SearchQuery
+            }
+        </small>
+    </h1>
+    <ul class="list-group">
+        @foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <span class="tag tag-danger tag-pill pull-xs-right">@item.UnitsInStock</span>
+                @item.Name
+            </li>
+        }
+    </ul>
+</div>

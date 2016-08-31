@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "Input groups";
+    Layout = "_Layout";
+}
+@using System.Threading.Tasks
+
+<div class="container" style="padding-top: 30px;">
+    <h1>Input Groups</h1>
+</div>
+
+@model Chapter3.Models.PersonModel
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-6">
+            <label asp-for="Phonenumber" class="col-md-4 control-label"></label>
+            <div class="input-group">
+                <span class="input-group-addon" id="PhoneNumber"><i class="fa fa-phone"></i></span>
+                <input asp-for="Phonenumber" class="form-control" placeholder="Phone number" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" style="padding-top: 25px;">
+        <div class="col-md-6">
+            <label asp-for="Email" class="col-md-4 control-label"></label>
+            <div class="input-group">
+                <input asp-for="Email" class="form-control" placeholder="Email address" />
+                <span class="input-group-addon" id="Email">@@northwind.com</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="padding-top: 25px;">
+        <div class="col-md-6">
+            <label asp-for="Salary" class="col-md-4 control-label"></label>
+            <div class="input-group">
+                <span class="input-group-addon">$</span>
+                <input type="text" class="form-control">
+                <span class="input-group-addon">.00</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+

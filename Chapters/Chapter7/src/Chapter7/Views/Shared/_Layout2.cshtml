@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.6/sandstone/bootstrap.min.css">
+    @RenderSection("styles", false)
+</head>
+<body>
+    <nav class="navbar navbar-full navbar-dark bg-primary">
+
+        <div class="collapse navbar-toggleable-xs" id="nav-content">
+            <a class="navbar-brand" href="#">
+                <img src="~/img/bootstraplogo.png" alt="Logo" />
+            </a>
+            <ul class="nav navbar-nav"></ul>
+        </div>
+
+    </nav>
+    @RenderBody()
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

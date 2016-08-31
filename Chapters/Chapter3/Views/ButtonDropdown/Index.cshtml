@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Button Group";
+    Layout = "_Layout";
+}
+@model Chapter3.Models.PersonModel
+<div class="container" style="padding-top: 30px;">
+    <h1>Button Dropdown</h1>
+</div>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <form asp-controller="ButtonDropdown" asp-action="Index" method="post" >
+                <fieldset class="form-group">
+                    <label asp-for="Firstname" class="col-md-2 control-label"></label>
+                    <input asp-for="Firstname" class="form-control"/>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <label asp-for="Lastname" class="col-md-2 control-label"></label>
+                    <input asp-for="Lastname" class="form-control" />
+                </fieldset>
+
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Save
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="submit">Save &amp; New</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="dropdown-item" type="button">Duplicate</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+
+    </div>
+
+
+
+</div>

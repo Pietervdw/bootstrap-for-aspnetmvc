@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Cascading Dropdown";
+    Layout = "_Layout";
+}
+
+@model Chapter4.Models.EmployeeModel
+<div class="container">
+    <h1 id="heading">Cascading dropdown</h1>
+    <form>
+        <div class="form-group row">
+            <label class="col-sm-2 form-control-label">Manager</label>
+            <div class="col-sm-10">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" id="selectedManager">@Model.Name</button>
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" id="managerlist">
+                        @foreach (var manager in ViewBag.Managers)
+                        {
+                            <a class="dropdown-item" href="#" data-id="@manager.Id">@manager.Name</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 form-control-label">Employee</label>
+            <div class="col-sm-10">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary">Select Employee</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" id="employees">
+                        @foreach (var employee in Model.ReportingEmployees)
+                        {
+                            <a class="dropdown-item" href="#" data-id="@employee.Id">@employee.Name</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $('#managerlist a').on('click', function () {
+            var $this = $(this);
+            var managerId = $this.data('id');
+            $("#selectedManager").text($this.text());
+
+            $.ajax({
+                type: 'GET',
+                dataType: 'html',
+                url: '@Url.Action("GetReportingEmployees", "Dropdown")',
+                data: { id: managerId }
+            }).done(function (data) {
+                $('#employees').replaceWith(data);
+            });
+        });
+    </script>
+}

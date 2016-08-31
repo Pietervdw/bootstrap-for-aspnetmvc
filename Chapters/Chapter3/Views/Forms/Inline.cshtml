@@ -1,0 +1,27 @@
+﻿@model Chapter3.Models.LoginViewModel
+@{
+    ViewData["Title"] = "Basic/Vertical Forms";
+    Layout = "_Layout";
+}
+
+
+<div class="container">
+
+    <h1>Log in - Inline Form</h1>
+    <form asp-controller="Account" asp-action="Login" method="post" class="form-inline">
+
+        <fieldset class="form-group">
+            <label asp-for="Username" class="sr-only">Username</label>
+            <input asp-for="Username" class="form-control" placeholder="Enter your username"/>
+        </fieldset>
+
+
+        <div class="form-group">
+            <label asp-for="Password" class="sr-only">Password</label>
+            <input asp-for="Password" class="form-control" placeholder="Enter your password"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>

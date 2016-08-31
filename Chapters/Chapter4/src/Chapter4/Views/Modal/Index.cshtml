@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Modal";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Modal</h1>
+    <div class="row">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#employeeModal">
+            Show Employee Modal
+        </button>
+    </div>
+
+    <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="Employee Information" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Andrew Fuller</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Andrew received his BTS commercial in 1974 and a Ph.D. in international marketing from the University of Dallas in 1981.
+                        He is fluent in French and Italian and reads German. He joined the company as a sales representative, was promoted to sales
+                        manager in January 1992 and to vice president of sales in March 1993. Andrew is a member of the Sales Management Roundtable,
+                        the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container" style="padding-top: 30px;">
+    <div class="row">
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#largeModal">
+            Show Large Modal
+        </button>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="largeModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Andrew Fuller</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Andrew received his BTS commercial in 1974 and a Ph.D. in international marketing from the University of Dallas in 1981.
+                        He is fluent in French and Italian and reads German. He joined the company as a sales representative, was promoted to sales
+                        manager in January 1992 and to vice president of sales in March 1993. Andrew is a member of the Sales Management Roundtable,
+                        the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container" style="padding-top: 30px;">
+    <div class="row">
+        <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#smallModal">
+            Show Small Modal
+        </button>
+    </div>
+    <div class="modal" tabindex="-1" role="dialog" id="smallModal">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Andrew Fuller</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Andrew received his BTS commercial in 1974 and a Ph.D. in international marketing from the University of Dallas in 1981.
+                        He is fluent in French and Italian and reads German. He joined the company as a sales representative, was promoted to sales
+                        manager in January 1992 and to vice president of sales in March 1993. Andrew is a member of the Sales Management Roundtable,
+                        the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Send Email</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

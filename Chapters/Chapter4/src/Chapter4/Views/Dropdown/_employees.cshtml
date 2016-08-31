@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Chapter4.Models.EmployeeModel>
+<div class="dropdown-menu" id="employees">
+    @foreach (var employee in Model)
+    {
+        <a class="dropdown-item" href="#" data-id="@employee.Id">@employee.Name</a>
+    }
+</div>
+
+
+
